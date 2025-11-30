@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang=”ru”>
+
+<head>
+    <meta charset=”UTF-8”>
+    <meta name=”viewport” content=”width=device-width, initial-scale=1.0”>
+    <title>Genshin Guides</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src=”https://cdn.tailwindcss.com”></script>
+
+ <!-- Tailwind кастомные переменные цветов -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        porcelain: "#FDFBF8",     // основной цвет фона
+                        bronze: "#E6A585",        // второстепенные элементы
+                        charcoal: "#2F3D4E",      // акцент (тёмный синий)
+                        airblue: "#5889A0",       // мелкие акценты
+                    },
+                    fontFamily: {
+                        nunito: ['Nunito', 'sans-serif'], // заголовки
+                        inter: ['Inter', 'sans-serif'],    // текст
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- шрифты -->
+    <link href=”https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Inter:wght@300;400;500&display=swap” rel=”stylesheet”>
+
+    <!-- favicon -->
+    <link rel=”icon” type=”image/png” href=”images/favicon.png”>
+
+</head>
+
+<body class=”bg-porcelain text-charcoal transition-colors duration-300”>
+            <!-- ============ HEADER ============ -->
+    <header class=”bg-charcoal text-porcelain shadow-lg”>
+        <nav class=”container mx-auto px-6 py-4 flex justify-between items-center”>
+
+            <!-- ЛОГОТИП -->
+            <div class=”flex items-center space-x-3”>
+                <!-- Можно заменить на svg позже -->
+                <div class=”w-10 h-10 bg-bronze rounded-lg”></div>
+
+                <a href=”index.html”
+                   class=”text-2xl font-nunito font-extrabold tracking-wide”>
+                    Genshin Guides
+                </a>
+            </div>
+
+            <!-- НАВИГАЦИЯ -->
+            <div class=”flex items-center space-x-8 font-inter”>
+
+                <!-- Каталог -->
+                <div class=”flex space-x-6”>
+                    <a href=”#” class=”hover:text-bronze transition”>Персонажи</a>
+                    <a href=”#” class=”hover:text-bronze transition”>Оружие</a>
+                    <a href=”#” class=”hover:text-bronze transition”>Артефакты</a>
+                    <a href=”#” class=”hover:text-bronze transition”>Боссы</a>
+                </div>
+
+                <!-- Вход / Регистрация -->
+                <a href=”login.html” class=”hover:text-bronze transition”>Вход</a>
+                <a href=”register.html” class=”hover:text-bronze transition”>Регистрация</a>
+
+                <!-- Личный кабинет -->
+                <a href=”profile.html”
+                   class=”px-4 py-2 bg-bronze text-charcoal rounded-lg hover:bg-airblue hover:text-porcelain transition font-nunito”>
+                    Личный кабинет
+                </a>
+
+                <!-- Переключатель тёмной темы -->
+                <button id=”darkModeToggle”
+                    class=”text-xl hover:text-bronze transition ml-2”>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <!-- ============ MAIN BANNER ============ -->
+    <section class=”relative w-full h-[500px] md:h-[650px] mb-16”>
+
+        <!-- Фоновое изображение -->
+        <img src=”images/main-banner.png”
+            alt=”Genshin Banner”
+            class=”w-full h-full object-cover brightness-75”>
+
+        <!-- Текст поверх баннера -->
+        <div class=”absolute top-1/2 left-10 md:left-20 transform -translate-y-1/2”>
+
+            <h1 class=”text-4xl md:text-6xl font-nunito font-extrabold text-porcelain drop-shadow-lg mb-4”>
+                Genshin Impact
+            </h1>
+
+            <p class=”text-xl md:text-2xl font-inter text-porcelain drop-shadow-lg max-w-xl”>
+                Гайды, советы и полезная информация для всех путешественников Тейвата.
+            </p>
+
+        </div>
+    </section>
+    <!-- ============ MAIN CONTENT ============ -->
+    <main class=”container mx-auto px-6 mb-20”>
+
+        <!-- ==== Блок: О игре Genshin Impact ==== -->
+        <section class=”mb-16”>
+            <h2 class=”text-3xl md:text-4xl font-nunito font-bold text-charcoal mb-6”>
+                О игре Genshin Impact
+            </h2>
+
+            <p class=”font-inter text-lg leading-7 text-charcoal max-w-3xl”>
+                <span class=”text-bronze font-semibold”>Genshin Impact</span> — это масштабная приключенческая игра,
+                в которой игроки исследуют огромный мир Тейвата, сражаются с врагами,
+                собирают персонажей и открывают секреты различных регионов.
+                Каждый персонаж обладает уникальными способностями, стихией и ролью в отряде,
+                что позволяет создавать множество стратегий и боевых комбинаций.
+            </p>
+        </section>
+
+        <!-- ==== Блок: О сайте ==== -->
+        <section class=”mb-16”>
+            <h2 class=”text-3xl md:text-4xl font-nunito font-bold text-charcoal mb-6”>
+                О нашем сайте
+            </h2>
+
+            <p class=”font-inter text-lg leading-7 text-charcoal max-w-3xl mb-4”>
+                Этот сайт создан для того, чтобы помочь как новичкам, так и опытным игрокам
+                разобраться в механиках персонажей, подобрать оптимальные билды и улучшить навыки игры.
+            </p>
+
+            <p class=”font-inter text-lg leading-7 text-charcoal max-w-3xl”>
+                Здесь вы найдёте:
+            </p>
+
+            <ul class=”list-disc list-inside mt-3 font-inter text-lg text-charcoal max-w-3xl space-y-2”>
+                <li>гайды на персонажей с рекомендациями по оружию и артефактам;</li>
+                <li>описания элементальных реакций и механик;</li>
+                <li>подборки команд и советы по синергии персонажей;</li>
+                <li>разборы боссов и ресурсов для прокачки;</li>
+                <li>обсуждения, комментарии и оценки гайдов от сообщества.</li>
+            </ul>
+        </section>
+
+    </main>
+    <!-- ============ FOOTER ============ -->
+    <footer class=”bg-charcoal text-porcelain py-6 mt-20”>
+        <div class=”container mx-auto px-6 flex justify-between items-center”>
+
+            <!-- Логотип -->
+            <div class=”flex items-center space-x-3”>
+                <div class=”w-8 h-8 bg-bronze rounded”></div>
+                <span class=”font-nunito text-xl font-bold”>Genshin Guides</span>
+            </div>
+
+            <!-- Авторские права -->
+            <p class=”font-inter text-sm”>
+                © 2025 Genshin Guides. Все права защищены.
+            </p>
+
+            <!-- Соцсети (пустые ссылки пока) -->
+            <div class=”flex space-x-4 text-lg”>
+                <a href=”#” class=”hover:text-bronze transition”>VK</a>
+                <a href=”#” class=”hover:text-bronze transition”>Discord</a>
+                <a href=”#” class=”hover:text-bronze transition”>Telegram</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ============ DARK MODE SCRIPT ============ -->
+    <script>
+        const toggle = document.getElementById("darkModeToggle");
+
+        // Проверяем тему при загрузке
+        if (localStorage.getItem("theme") === "dark") {
+            document.documentElement.classList.add("dark");
+            document.body.classList.add("bg-[#1B1B1B]", "text-porcelain");
+        }
+
+        // Переключатель темы
+        toggle.addEventListener("click", () => {
+            const isDark = document.documentElement.classList.toggle("dark");
+
+            if (isDark) {
+                document.body.classList.add("bg-[#1B1B1B]", "text-porcelain");
+                localStorage.setItem("theme", "dark");
+            } else {
+                document.body.classList.remove("bg-[#1B1B1B]”, “text-porcelain");
+                localStorage.setItem("theme", "light");
+            }
+        })
