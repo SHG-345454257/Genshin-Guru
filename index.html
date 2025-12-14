@@ -76,7 +76,8 @@
 
                 <!-- Переключатель тёмной темы -->
                 <button id="darkModeToggle"
-                    class="text-xl hover:text-bronze transition ml-2">
+                    class="w-10 h-10 flex items-center justify-center rounded-full hover: bg-white/10 transition text-xl"
+                    aria-label="Переключить тему">
                 </button>
             </div>
         </nav>
@@ -173,26 +174,38 @@
     <!-- ============ DARK MODE SCRIPT ============ -->
     <script>
         const toggle = document.getElementById("darkModeToggle");
+        const html = document.documentElement;
+        const body = document.body;
 
-        // Проверяем тему при загрузке
-        if (localStorage.getItem("theme") === "dark") {
-            document.documentElement.classList.add("dark");
-            document.body.classList.add("bg-[#1B1B1B]", "text-porcelain");
+        function setDarkTheme() {
+            html.classList.add("dark");
+            body.classList.add("bg-[#1B1B1B]", "text-porcelain");
+            body.classList.remove("bg-porcelain", "text-charcoal");
+            toggle.textContent = "🔆";
+            localStorage.setItem("theme", "dark");
         }
 
-        // Переключатель темы
+        function setLightTheme() {
+            html.classList.remove("dark");
+            body.classList.remove("bg-[#1B1B1B]", "text-porcelain");
+            body.classList.add("bg-porcelain", "text-charcoal");
+            toggle.textContent = "🌙";
+            localStorage.setItem("theme", "light");
+        }
+
+        //Проверка при загрузке
+        if (localStorage.getItem("theme") === "dark") {
+            setDarkTheme();
+        } else {
+            setLightTheme();
+        }
+
+        //Клик по кнопке
         toggle.addEventListener("click", () => {
-            const isDark = document.documentElement.classList.toggle("dark");
-
-            if (isDark) {
-                document.body.classList.add("bg-[#1B1B1B]", "text-porcelain");
-                localStorage.setItem("theme", "dark");
+            if (html.classList.contains("dark")) {
+               setLightTheme();
             } else {
-                document.body.classList.remove("bg-[#1B1B1B]”, "text-porcelain");
-                localStorage.setItem("theme", "light");
+                setDarkTheme();
             }
-        })
-
-
-
-
+        });
+    </script>
