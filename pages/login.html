@@ -38,7 +38,9 @@
 
 </head>
 
- <!-- ============ HEADER ============ -->
+<!-- ============ BODY ============ -->
+    <body class="min-h-screen flex flex-col bg-bronze">
+        
     <header class="bg-charcoal dark:bg-porcelain text-porcelain dark:text-charcoal shadow-lg">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
 
@@ -53,11 +55,10 @@
                 </a>
             </div>
     </header> 
-<!-- ============ BODY ============ -->
-    <body class="min-h-screen bg-bronze">
+        
     <main>
         <!-- Секция с формой входа в систему -->
-            <div class="w-full lg:w-full flex items-center justify-center px-8 py-12 bg-bronze">
+            <div class="w-full lg:w-full flex flex-grow items-center justify-center px-8 py-12 bg-bronze">
                 <div class="w-full max-w-md">
                     <h2 class="text-4xl font-nunito font-bold text-charcoal mb-8 text-center">Войти</h2>
                     <form id="loginForm" class="space-y-6">
@@ -136,8 +137,7 @@
             }
         });
     </script>
-    </body>
- <!-- ============ FOOTER ============ -->
+        
     <footer class="bg-charcoal dark:bg-porcelain text-porcelain dark:text-charcoal py-6">
         <div class="container mx-auto px-6 flex justify-between items-center">
 
@@ -160,6 +160,10 @@
             </div>
         </div>
     </footer>
+
+    </body>
+ <!-- ============ FOOTER ============ -->
+    
 
 
 
