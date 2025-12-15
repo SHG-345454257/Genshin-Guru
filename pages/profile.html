@@ -169,10 +169,42 @@
         </div>
     </footer>
 
+     <!-- ============ DARK MODE SCRIPT ============ -->
+    <script>
+        const toggle = document.getElementById("darkModeToggle");
+        const html = document.documentElement;
+        
+        function setDarkTheme() {
+            html.classList.add("dark");
+            toggle.textContent = "🔆";
+            localStorage.setItem("theme", "dark");
+        }
+
+        function setLightTheme() {
+            html.classList.remove("dark");
+            toggle.textContent = "🌙";
+            localStorage.setItem("theme", "light");
+        }
+
+        //Проверка при загрузке
+        if (localStorage.getItem("theme") === "dark") {
+            setDarkTheme();
+        } else {
+            setLightTheme();
+        }
+
+        //Клик по кнопке
+        toggle.addEventListener("click", () => {
+            html.classList.contains("dark")
+                ? setLightTheme()
+                : setDarkTheme();
+            });
+    </script>
 </body>
 
 
     
+
 
 
 
